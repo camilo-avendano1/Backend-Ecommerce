@@ -21,17 +21,20 @@ public class ProductController {
     IProductService productService;
 
 
-    @Operation(summary = "Obtener todos los productos existentes", description = "obtener todos los productos existentes", responses = {
-            @ApiResponse(responseCode = "200", description = "Computador encontrado", content = @Content(schema = @Schema(implementation = ProductDTO[].class ))),
-            @ApiResponse(responseCode = "404", description = "No se encontraron productos", content = @Content(schema = @Schema(implementation = String.class))) })
-    @GetMapping("/all")
-    public ResponseEntity<List<ProductDTO>> findAll(){
-        List<ProductDTO> productos = productService.findAll();
-        if (productos.isEmpty()){
-            return ResponseEntity.notFound().build();
-        }
-        return  ResponseEntity.ok(productos);
-    }
+
+
+//
+//    @Operation(summary = "Obtener todos los productos existentes", description = "obtener todos los productos existentes", responses = {
+//            @ApiResponse(responseCode = "200", description = "Computador encontrado", content = @Content(schema = @Schema(implementation = ProductDTO[].class ))),
+//            @ApiResponse(responseCode = "404", description = "No se encontraron productos", content = @Content(schema = @Schema(implementation = String.class))) })
+//    @GetMapping("/all")
+//    public ResponseEntity<List<ProductDTO>> findAll(){
+//        List<ProductDTO> productos = productService.findAll();
+//        if (productos.isEmpty()){
+//            return ResponseEntity.notFound().build();
+//        }
+//        return  ResponseEntity.ok(productos);
+//    }
 
 
 

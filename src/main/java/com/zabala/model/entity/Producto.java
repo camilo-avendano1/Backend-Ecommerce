@@ -25,4 +25,6 @@ public class Producto {
     private String categoria;
     @Column(name = "stock", nullable = false)
     private Integer stock;
+
+
 }

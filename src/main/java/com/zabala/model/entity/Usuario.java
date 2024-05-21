@@ -37,6 +37,9 @@ public class Usuario implements UserDetails {
     @Column(name = "rol")
     private String rol;
 
+    @Column(name = "json_carrito", nullable = false)
+    private String jsonCarrito;
+
 
 
     //metodos de la interfaz UserDetails

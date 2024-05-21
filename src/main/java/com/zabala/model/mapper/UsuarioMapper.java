@@ -15,6 +15,7 @@ public interface UsuarioMapper {
     @Mapping(target = "correo", source = "correo")
     @Mapping(target = "contrasena", source = "contrasena")
     @Mapping(target = "rol", source = "rol")
+    @Mapping(target = "jsonCarrito", source = "jsonCarrito")
     Usuario toUsuario(UsuarioDTO usuarioDTO);
 
     @Mapping(target = "id", source = "id")
@@ -23,6 +24,7 @@ public interface UsuarioMapper {
     @Mapping(target = "correo", source = "correo")
     @Mapping(target = "contrasena", source = "contrasena")
     @Mapping(target = "rol", source = "rol")
+    @Mapping(target = "jsonCarrito", source = "jsonCarrito")
     UsuarioDTO toUsuarioDTO(Usuario usuario);
 
     List<UsuarioDTO> toUsuariosDTOList(List<Usuario> usuarios);
