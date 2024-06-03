@@ -1,6 +1,5 @@
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\dto\UsuarioDTO.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\repository\ProductoRepository.java
-C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\dto\ProductoDTO.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\repository\UsuarioRepository.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\config\security\jwt\JwtFilter.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\service\product\IProductService.java
@@ -13,6 +12,7 @@ C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\service\auth\JwtService.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\service\auth\AuthService.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\dto\auth\ResponseAuth.java
+C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\dto\ProductDTO.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\config\CorsConfig.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\mapper\UsuarioMapper.java
 C:\Users\juanc\Documents\Github\Backend-Ecommerce\src\main\java\com\zabala\model\dto\auth\LoginUserDto.java

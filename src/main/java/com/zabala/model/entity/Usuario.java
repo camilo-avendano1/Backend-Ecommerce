@@ -37,7 +37,7 @@ public class Usuario implements UserDetails {
     @Column(name = "rol")
     private String rol;
 
-    @Column(name = "json_carrito", nullable = false)
+    @Column(name = "json_carrito")
     private String jsonCarrito;
 
 

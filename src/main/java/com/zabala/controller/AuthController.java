@@ -4,6 +4,7 @@ package com.zabala.controller;
 import com.zabala.model.dto.UsuarioDTO;
 import com.zabala.model.dto.auth.LoginUserDto;
 import com.zabala.model.dto.auth.ResponseAuth;
+import com.zabala.model.entity.Usuario;
 import com.zabala.service.auth.AuthService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -38,12 +39,15 @@ public class AuthController {
             @ApiResponse(responseCode = "201", description = "Usuario creado", content = @Content(schema = @Schema(implementation = ResponseAuth.class)) ),
             @ApiResponse(responseCode = "400", description = "Error al registrar usuario", content = @Content(schema = @Schema(implementation = String.class))) })
     @PostMapping("/register")
-    public ResponseEntity<Object> register(@RequestBody UsuarioDTO createUserDto){
-        try {
-            return new ResponseEntity<>(authService.registro(createUserDto), HttpStatus.CREATED);
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Error al registrar usuario");
-        }
+    public ResponseEntity<Object> register(@RequestBody Usuario createUserDto){
+//        try {
+            ResponseAuth token = authService.registro(createUserDto);
+            System.out.println(token.getToken());
+
+            return new ResponseEntity<>(token, HttpStatus.CREATED);
+//        } catch (Exception e) {
+//            return ResponseEntity.badRequest().body("Error al registrar usuario");
+//        }
 
     }
 

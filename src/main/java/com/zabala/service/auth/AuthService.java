@@ -27,15 +27,27 @@ public class AuthService implements UserDetailsService {
     private JwtService jwtService;
     private PasswordEncoder passwordEncoder;
 
-    public ResponseAuth registro(UsuarioDTO createUserDto){
-        Usuario usuario = usuarioMapper.toUsuario(createUserDto);
-        usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
-        Usuario usuarioResponse = usuarioRepository.save(usuario);
-        if(usuarioResponse == null){
-            throw new RuntimeException("Error al registrar usuario");
+    public ResponseAuth registro(Usuario createUserDto){
+//
+        try{
+            //Usuario usuario = usuarioMapper.toUsuario(createUserDto);
+            Usuario usuario = createUserDto;
+            usuario.setContrasena(passwordEncoder.encode(usuario.getContrasena()));
+            System.out.println(usuario);
+            Usuario usuarioResponse = usuarioRepository.save(usuario);
+
+            System.out.println(usuarioResponse);
+            if(usuarioResponse == null){
+                System.out.println("entramos");
+                System.out.println(usuarioResponse);
+                throw new RuntimeException("Error al registrar usuario");
+            }
+            String token = jwtService.createToken(new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities()));
+            return new ResponseAuth(token);
         }
-        String token = jwtService.createToken(new UsernamePasswordAuthenticationToken(usuario, null, usuario.getAuthorities()));
-        return new ResponseAuth(token);
+        catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
     }
 
     public ResponseAuth login(LoginUserDto loginUserDto) throws UsernameNotFoundException, BadCredentialsException {

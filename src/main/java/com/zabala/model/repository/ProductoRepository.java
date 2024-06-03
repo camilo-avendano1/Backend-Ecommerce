@@ -17,4 +17,6 @@ public interface ProductoRepository extends CrudRepository<Producto, Integer> {
 
     Page<Producto> findByPrecioBetween(Double precio1, Double precio2, Pageable pageable);
 
+
+
 }

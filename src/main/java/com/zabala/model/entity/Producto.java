@@ -12,7 +12,7 @@ import lombok.Setter;
 @Table(name = "producto")
 public class Producto {
     @Id
-    @Column(name = "usuario_id", nullable = false)
+    @Column(name = "product_id", nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     @Column(name = "nombre", nullable = false)
@@ -25,6 +25,7 @@ public class Producto {
     private String categoria;
     @Column(name = "stock", nullable = false)
     private Integer stock;
-
+    @Column(name = "imagen")
+    private String imagen;
 
 }
